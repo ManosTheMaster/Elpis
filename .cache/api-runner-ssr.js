@@ -3,15 +3,9 @@ var plugins = [{
       options: {"plugins":[]},
     },{
       plugin: require('C:/git/Me/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
-      options: {"plugins":[],"name":"Hi! I'm Elpida!","short_name":"Hi! I'm Elpida!","start_url":"/gatsby-starter-cv","background_color":"#ffffff","theme_color":"#25303B","display":"minimal-ui","icon":"src/assets/gatsby-icon.png","cache_busting_mode":"query","include_favicon":true,"legacy":true,"theme_color_in_head":true,"cacheDigest":"edf3d310d67f8284a562bc3a58c3e761"},
+      options: {"plugins":[],"name":"Identity","short_name":"Landing","start_url":"/gatsby-starter-identity/","background_color":"#663399","theme_color":"#663399","display":"standalone","icon":"src/assets/img/website-icon.png","cache_busting_mode":"query","include_favicon":true,"legacy":true,"theme_color_in_head":true,"cacheDigest":"edf64a15fe10c962d9abd81c0a0f4d10"},
     },{
-      plugin: require('C:/git/Me/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
-      options: {"plugins":[]},
-    },{
-      plugin: require('C:/git/Me/node_modules/gatsby-plugin-google-analytics/gatsby-ssr'),
-      options: {"plugins":[],"trackingId":"UA-000000000-1"},
-    },{
-      plugin: require('C:/git/Me/gatsby-ssr'),
+      plugin: require('C:/git/Me/node_modules/gatsby-plugin-offline/gatsby-ssr'),
       options: {"plugins":[]},
     }]
 // During bootstrap, we write requires at top of this file which looks like:
