@@ -28,7 +28,46 @@ class Repositories extends React.Component {
     const { status } = this.state
     return (
       <div className={this.props.className}>
-        
+        <h2>Latest repositories on Github</h2>
+        {status === "loading" && <div className='repositories__loader'><Loader /></div>}
+        {status === "ready" &&
+          this.state.repos && (
+            <React.Fragment>
+              <div className="repositories__content">
+                {this.state.repos.map(repo => (
+                  <React.Fragment key={repo.name}>
+                    <div className="repositories__repo">
+                      <a 
+                        className='repositories__repo-link' 
+                        href={repo.html_url}
+                        target="_blank"
+                      >
+                        <strong>{repo.name}</strong>
+                      </a>
+                      <div>{repo.description}</div>
+                      <div className="repositories__repo-date">
+                        Updated: {new Date(repo.updated_at).toUTCString()}
+                      </div>
+                      <div className="repositories__repo-star">
+                        {repo.fork && <GoRepoForked />}
+                        <GoStar /> {repo.stargazers_count}
+                      </div>
+                    </div>
+                    <hr />
+                  </React.Fragment>
+                ))}
+              </div>
+              <div className="repositories_user-link">
+                <a 
+                  href={`https://github.com/${siteConfig.githubUsername}`}
+                  target="_blank"
+                >
+                  See all my repositories
+                  <GoLinkExternal style={{ marginLeft: 8 }} />
+                </a>
+              </div>
+            </React.Fragment>
+          )}
       </div>
     )
   }

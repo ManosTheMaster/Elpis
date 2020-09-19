@@ -91,6 +91,10 @@ module.exports = {
     {
       label: 'Home',
       url: '/',
+    },
+    {
+      label: 'Portifolio',
+      url: '/portifolio',
     }
   ]
 }
